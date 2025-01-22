@@ -31,7 +31,7 @@ export default function RebalancingInformationModalContentTable() {
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
-                <TableRow>
+                <TableRow sx={{backgroundColor: '#6CB4EE'}}>
                     <TableCell> <Typography>Product name</Typography> </TableCell>
                     <TableCell> <Typography>Previous quantity</Typography> </TableCell>
                     <TableCell> <Typography>New quantity</Typography> </TableCell>

@@ -33,7 +33,7 @@ export default function PortfolioCompositionTable() {
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
-                <TableRow>
+                <TableRow sx={{backgroundColor: '#6CB4EE'}}>
                     <TableCell> <Typography>Product name</Typography> </TableCell>
                     <TableCell> <Typography>Quantity</Typography> </TableCell>
                     <TableCell> <Typography>Price (€)</Typography></TableCell>

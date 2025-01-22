@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 export default function RebalancingInformationModalContent() {
 return (
     <>
-        <Typography variant="h2">Rebalancing information for risked assets</Typography>
+        <Typography variant="h6" sx={{backgroundColor: '#6CB4EE'}}>Rebalancing information for risked assets</Typography>
         <RebalancingInformationModalContentTable />
     </>
     );

@@ -1,12 +1,13 @@
 import React from 'react';
 import { BarChart } from '@mui/x-charts/BarChart';
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 // TODO Change with real data
   
 export default function PortfolioFlows() {
     return (
-        <>
+        <Box flexGrow={1}>
             <Typography variant="h6">
                 Flows until now (in €)
             </Typography>
@@ -18,6 +19,6 @@ export default function PortfolioFlows() {
                     xAxis={[{ data: ['Q1', 'Q2', 'Q3', 'Q4'], scaleType: 'band' }]}
                     margin={{ top: 10, bottom: 30, left: 40, right: 10 }} 
             />
-        </>
+        </Box>
     );
 }
