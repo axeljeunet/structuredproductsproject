@@ -1,5 +1,5 @@
 import pickle
-from warehouse.market_data import MarketData
+from models.market_data import MarketData
 import os
 
 class DataStorage:

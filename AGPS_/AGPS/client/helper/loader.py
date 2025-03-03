@@ -1,5 +1,5 @@
 import pandas as pd
-from warehouse.market_data import MarketData
+from models.market_data import MarketData
 from helper.helper import assure_date_is_of_type_datetime
 import numpy as np
 import math as m

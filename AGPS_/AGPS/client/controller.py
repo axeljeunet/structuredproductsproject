@@ -1,5 +1,5 @@
-from AGPS_.AGPS.client.helper.loader import DataLoader
-from AGPS_.AGPS.client.helper.storage import DataStorage
+from helper.loader import DataLoader
+from helper.storage import DataStorage
 from tests.test_services import test_get_all_prices_by_dates, test_get_prices_by_indexes_and_dates
 import pandas as pd
 import datetime
@@ -11,11 +11,11 @@ import os
 import grpc
 
 # Charger les données depuis Excel
-MARKET_DATA_PATH = "~/3aif/AGPS/DonneesGPS2025.xlsx"
+MARKET_DATA_PATH = "AGPS_/AGPS/DonneesGPS2025.xlsx"
 MARKET_DATA = DataLoader.load_from_file(MARKET_DATA_PATH)
 
 # Convertir ~ en chemin absolu
-JSON_FILE_PATH = os.path.expanduser("~/3aif/AGPS/fichier_in.json")
+JSON_FILE_PATH = os.path.expanduser("AGPS_/AGPS/fichier_in.json")
 
 END_DATE = datetime.datetime(year=2014, month=1, day=6)
 
@@ -31,13 +31,13 @@ SERVER_ADDRESS = "localhost:50051"
 CHANNEL = grpc.insecure_channel(SERVER_ADDRESS)
 STUB = pricing_pb2_grpc.GrpcPricerStub(CHANNEL)
 
-def rebalancingInformation():
+def rebalancing_information(start_date):
     return
 
-def information():
+def information(start_date):
     return
 
-def rebalance():
+def rebalance(start_date):
     return
 
 def get_pricing_input(start_date):
@@ -75,7 +75,7 @@ def get_pricing_input(start_date):
         past=past_lines,
         monitoringDateReached=True,
         time=0,
-        json= "/home/ensimag/3aif/AGPS/fichier_in.json"
+        json= "AGPS_/AGPS/fichier_in.json"
     )
 
 def main():

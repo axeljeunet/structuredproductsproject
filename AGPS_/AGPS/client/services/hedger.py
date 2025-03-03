@@ -1,4 +1,4 @@
-from portfolio import Portfolio
+from AGPS_.AGPS.client.models.portfolio import Portfolio
 
 class Hedger:
     def __init__(self, cash=0.0):

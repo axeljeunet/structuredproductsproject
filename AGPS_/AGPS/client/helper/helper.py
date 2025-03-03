@@ -1,5 +1,5 @@
 import pandas as pd
-from warehouse.market_data import MarketData
+from models.market_data import MarketData
 
 
 def assure_date_is_of_type_datetime(df):

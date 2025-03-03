@@ -1,5 +1,5 @@
 import pandas as pd
-from warehouse.market_data import MarketData
+from models.market_data import MarketData
 from helper.helper import get_all_prices_by_dates, get_prices_by_indexes_and_dates
 
 def test_get_all_prices_by_dates():
