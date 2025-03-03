@@ -7,6 +7,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
+import { usePortfolioRebalancingInformationQuery } from '../../utils/queries';
+
 
 // TODO CHange this to integrate data
 
@@ -26,7 +28,16 @@ function createData(
     createData('Gingerbread', 356, 16.0),
   ];
   
-export default function RebalancingInformationModalContentTable() {
+export default function RebalancingInformationModalContentTable( {date} ) {
+    const { isLoading, error, data } = usePortfolioRebalancingInformationQuery({ date })
+
+    if (isLoading) { return <p className="loading-message">Loading...</p> }
+
+    if (error) { 
+        const errorMessage = (error as { message?: string })?.message || 'An unknown error occurred';
+        return <p className="error-message">{errorMessage}</p>;
+    }
+
     return (
         <TableContainer component={Paper}>
             <Table sx={{ minWidth: 650 }} aria-label="simple table">

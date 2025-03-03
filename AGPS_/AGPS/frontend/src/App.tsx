@@ -17,7 +17,7 @@ function App() {
         <DateInformation date={date} setDate={setDate} />
         <PortfolioInformationProvider date={date}>
           <PortfolioCompositionSection />
-          <RebalancingSection />
+          <RebalancingSection date={date} />
           <PortfolioGlobalInformationsSection />
         </PortfolioInformationProvider>
     </Box>

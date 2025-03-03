@@ -7,7 +7,7 @@ import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
   
-export default function RebalancingSection() {
+export default function RebalancingSection( {date} ) {
     const [rebalancingInformationModalOpened, setRebalancingInformationModalOpened] = useState(false);
 
     return (
@@ -20,7 +20,7 @@ export default function RebalancingSection() {
             </Button>
             {rebalancingInformationModalOpened && (
                 <Modal open={rebalancingInformationModalOpened} onClose={() => setRebalancingInformationModalOpened(false)}> 
-                    <RebalancingInformationModalContent /> 
+                    <RebalancingInformationModalContent date={date} /> 
                 </Modal>
             )}
         </Box>
