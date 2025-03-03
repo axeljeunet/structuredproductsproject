@@ -9,12 +9,16 @@ import pricing_pb2_grpc
 import json
 import os
 import grpc
-from fastapi import FastAPI
-import uvicorn
 
-app = FastAPI()
+def rebalancingInformation():
+    return
 
-@app.get("/price")
+def information():
+    return
+
+def rebalance():
+    return
+
 def main():
     # Charger les données depuis Excel
     file_path = "~/3aif/AGPS/DonneesGPS2025.xlsx"
@@ -87,6 +91,3 @@ def main():
         print(f"✅ Écart-type du prix : {response.priceStdDev}")
         print(f"✅ Écart-type des deltas : {response.deltasStdDev}")
         # response = stub.Heartbeat(empty)
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
