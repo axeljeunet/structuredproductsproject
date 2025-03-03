@@ -1,0 +1,8 @@
+/home/ensimag/Downloads/clion-2024.3.2/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/ensimag/Downloads/clion-2024.3.2/bin/ninja/linux/x64/ninja -DPnl_DIR=/home/ensimag/3aif/pnl-1.15.0/build/lib/cmake/pnl -G Ninja -S /home/ensimag/3aif/AGPS/server -B /home/ensimag/3aif/AGPS/server/cmake-build-debug
+-- Using protobuf 23.4.0
+-- Using gRPC 1.57.0
+-- PNL Include: /home/ensimag/3aif/pnl-1.15.0/build/include;/usr/lib/x86_64-linux-gnu/openmpi/include;/usr/lib/x86_64-linux-gnu/openmpi/include/openmpi
+-- PNL Libraries: /home/ensimag/3aif/pnl-1.15.0/build/lib/libpnl.so;/usr/lib/x86_64-linux-gnu/libopenblas.so;/usr/lib/x86_64-linux-gnu/libopenblas.so;-lm;-ldl;/usr/lib/x86_64-linux-gnu/openmpi/lib/libmpi.so;m;dl
+-- Configuring done (0.2s)
+-- Generating done (0.1s)
+-- Build files have been written to: /home/ensimag/3aif/AGPS/server/cmake-build-debug
