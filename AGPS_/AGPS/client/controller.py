@@ -32,12 +32,19 @@ CHANNEL = grpc.insecure_channel(SERVER_ADDRESS)
 STUB = pricing_pb2_grpc.GrpcPricerStub(CHANNEL)
 
 def rebalancing_information(start_date):
-    return
+    start_date = start_date.replace(tzinfo=None)
+    pricing_input = get_pricing_input(start_date)
+    
+    response = STUB.PriceAndDeltas(pricing_input)
+
+    return response.deltas
 
 def information(start_date):
+    start_date = start_date.replace(tzinfo=None)
     return
 
 def rebalance(start_date):
+    start_date = start_date.replace(tzinfo=None)
     return
 
 def get_pricing_input(start_date):

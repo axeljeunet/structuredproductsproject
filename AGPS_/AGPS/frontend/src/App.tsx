@@ -7,8 +7,8 @@ import Box from '@mui/material/Box';
 import PortfolioInformationProvider from './components/PortfolioInformationProvider';
 import DateInformation from './components/DateInformation';
 
-const INITAL_YEAR = 2000;
-const INITAL_MONTH_INDEX = 6
+const INITAL_YEAR = 2009;
+const INITAL_MONTH_INDEX = 0
 const INITAL_DAY = 5
 
 function App() {
