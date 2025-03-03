@@ -1,11 +1,11 @@
-function useRebalanceMutation( { datetime } ) {
+function useRebalanceMutation( { date } ) {
     return useMutation(
         {
             mutationFn: async () => {
                 const res = await fetch(getAPIUrl("rebalance"), {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ datetime })
+                      body: JSON.stringify({ date: date.toISOString() })
                 });
 
                 const resJson = await res.json();
@@ -17,8 +17,12 @@ function useRebalanceMutation( { datetime } ) {
                 return resJson;
             },
             onSuccess: () => {
-                QUERY_CLIENT.invalidateQueries({ queryKey: ['information', { datetime }] })
-                QUERY_CLIENT.invalidateQueries({ queryKey: ['rebalancingInformation', { datetime }] })
+                QUERY_CLIENT.invalidateQueries({ queryKey: ['information', { date }] })
+                QUERY_CLIENT.invalidateQueries({ queryKey: ['rebalancingInformation', { date }] })
             }
         });
+}
+
+export {
+    useRebalanceMutation
 }
