@@ -16,10 +16,10 @@ export default function DateInformation({ date, setDate }) {
             <Typography>DAY +1</Typography>
             </Button>
             <DateTimePicker
-            label="Choose a day"
-            value={date}
-            views={['year', 'month', 'day']}
-            onChange={(newValue) => newValue && setDate(newValue)}
+                label="Choose a day"
+                value={date}
+                views={['year', 'month', 'day']}
+                onChange={(newValue) => newValue && setDate(newValue)}
             />
         </Box>
     );

@@ -7,14 +7,22 @@ import Box from '@mui/material/Box';
 import PortfolioInformationProvider from './components/PortfolioInformationProvider';
 import DateInformation from './components/DateInformation';
 
-const INITAL_DATE = '05/07/2000';
+const INITAL_YEAR = 2000;
+const INITAL_MONTH_INDEX = 6
+const INITAL_DAY = 5
 
 function App() {
-  const [date, setDate] = useState(new Date(INITAL_DATE))
+  const [date, setDate] = useState(new Date(Date.UTC(INITAL_YEAR, INITAL_MONTH_INDEX, INITAL_DAY)))
+
+  const handleDateChange = (newValue) => {
+    if (newValue) {
+      setDate(new Date(Date.UTC(newValue.getUTCFullYear(), newValue.getUTCMonth(), newValue.getUTCDate())));
+    }
+  }
 
   return (
     <Box className="App" sx={{ display: "flex", flexDirection: "column", gap: 2 }}>
-        <DateInformation date={date} setDate={setDate} />
+        <DateInformation date={date} setDate={handleDateChange} />
         <PortfolioInformationProvider date={date}>
           <PortfolioCompositionSection />
           <RebalancingSection date={date} />
