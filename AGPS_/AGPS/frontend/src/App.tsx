@@ -15,12 +15,14 @@ const INITAL_DAY = 5
 
 function App() {
   const [date, setDate] = useState(new Date(Date.UTC(INITAL_YEAR, INITAL_MONTH_INDEX, INITAL_DAY)))
+  localStorage.setItem("currentDate", date.toISOString());
 
   const navigate = useNavigate()
 
   const handleDateChange = (newValue) => {
     if (newValue) {
       setDate(new Date(Date.UTC(newValue.getUTCFullYear(), newValue.getUTCMonth(), newValue.getUTCDate())));
+      localStorage.setItem("currentDate", date.toISOString());
     }
   }
 

@@ -47,6 +47,13 @@ def rebalance(start_date):
     start_date = start_date.replace(tzinfo=None)
     return
 
+def indexes_information(start_date):
+    start_date = start_date.replace(tzinfo=None)
+
+    # TODO Make it stop at start_date
+    # Fails currently
+    return MARKET_DATA
+
 def get_pricing_input(start_date):
     const_int_dates = [0]  # Début à 0 pour le premier point
     for date in CONSTATION_DATES:

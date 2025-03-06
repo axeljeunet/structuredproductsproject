@@ -45,8 +45,30 @@ function usePortfolioRebalancingInformationQuery({ date }) {
     });
 }
 
+function useIndexesInformationQuery({ date }) {
+    return useQuery({
+        queryKey: ['indexesInformation', { date }],
+        queryFn: async () => {
+            const res = await fetch(getAPIUrl("indexesInformation"), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ date: date.toISOString() })
+            });
+
+            const resJson = await res.json();
+
+            if(!res.ok) {
+                throw new Error(resJson.message);
+            }
+
+            return resJson;
+        }
+    });
+}
+
 export {
     usePortfolioInformationQuery,
     usePortfolioRebalancingInformationQuery,
+    useIndexesInformationQuery,
     QUERY_CLIENT
 }

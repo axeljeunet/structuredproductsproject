@@ -14,6 +14,11 @@ def information(data: DateRequest):
     print(f"Getting information from date : {data.date}")
     return controller.information(data.date)
 
+@router.post("/indexesInformation")
+def indexes_information(data: DateRequest):
+    print(f"Getting indexes information from date : {data.date}")
+    return controller.indexes_information(data.date)
+
 @router.post("/rebalance")
 def rebalance(data: DateRequest):
     print(f"Rebalancing portfolio from date : {data.date}")
